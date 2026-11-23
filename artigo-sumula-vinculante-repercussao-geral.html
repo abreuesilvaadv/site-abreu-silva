@@ -47,6 +47,21 @@
     .artigo-cta .btn-dourado:hover { background: #96875A; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   </style>
+<!-- Google tag (gtag.js) - Google Ads AW-10880346869 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10880346869"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-10880346869');
+  // Conversões: clique em qualquer link do WhatsApp
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp.com/send"]');
+    if (!a) return;
+    gtag('event', 'conversion', {'send_to': 'AW-10880346869/b9jiCI6bvKoZEPXVk8Qo'});
+    gtag('event', 'conversion', {'send_to': 'AW-10880346869/t8nLCN2y968ZEPXVk8Qo'});
+  });
+</script>
 </head>
 <body>
   <nav class="navbar" id="navbar">
