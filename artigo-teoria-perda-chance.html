@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Teoria da Perda de Uma Chance — Abreu & Silva Sociedade de Advogados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .artigo-hero { background: var(--charcoal); padding: 120px 0 60px; border-bottom: 1px solid rgba(172,151,117,0.2); }
+    .artigo-hero .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .artigo-hero .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .artigo-hero .breadcrumb span { color: rgba(255,255,255,0.4); }
+    .artigo-hero .tag-categoria { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 14px; margin-bottom: 24px; }
+    .artigo-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: #fff; line-height: 1.2; max-width: 800px; margin-bottom: 24px; }
+    .artigo-hero h1 em { color: var(--gold); font-style: italic; }
+    .artigo-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .artigo-meta .autor { display: flex; align-items: center; gap: 12px; }
+    .artigo-meta .autor-monograma { width: 44px; height: 44px; background: var(--gold); color: var(--charcoal); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; border-radius: 50%; }
+    .artigo-meta .autor-info strong { display: block; color: #fff; font-size: 0.9rem; font-weight: 500; }
+    .artigo-meta .autor-info span { color: rgba(255,255,255,0.5); font-size: 0.78rem; }
+    .artigo-meta .divider { width: 1px; height: 32px; background: rgba(255,255,255,0.15); }
+    .artigo-meta .data { color: rgba(255,255,255,0.5); font-size: 0.82rem; letter-spacing: 0.05em; }
+    .artigo-meta .publicado-em { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .artigo-meta .publicado-em a { color: var(--gold); text-decoration: none; }
+    .artigo-meta .publicado-em a:hover { text-decoration: underline; }
+
+    .artigo-corpo { background: #fff; padding: 80px 0; }
+    .artigo-corpo .container { max-width: 780px; }
+    .artigo-corpo h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--charcoal); margin: 52px 0 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gold); }
+    .artigo-corpo p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 22px; text-align: justify; }
+    .artigo-corpo p sup { font-size: 0.7rem; color: var(--gold); font-weight: 600; }
+    .artigo-corpo .citacao-bloco { border-left: 3px solid var(--gold); margin: 32px 0; padding: 16px 24px; background: #f9f6f1; font-style: italic; color: #555; font-size: 0.95rem; line-height: 1.8; }
+
+    .artigo-corpo .notas { margin-top: 64px; padding-top: 32px; border-top: 2px solid var(--gold); }
+    .artigo-corpo .notas h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 20px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .artigo-corpo .notas ol { padding-left: 0; list-style: none; }
+    .artigo-corpo .notas li { font-size: 0.82rem; color: #666; line-height: 1.75; margin-bottom: 10px; padding-left: 28px; position: relative; }
+    .artigo-corpo .notas li::before { content: attr(data-num); position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 0.75rem; }
+    .artigo-corpo .fonte-original { margin-top: 48px; padding: 24px; background: var(--charcoal); color: rgba(255,255,255,0.7); font-size: 0.85rem; display: flex; align-items: center; gap: 16px; }
+    .artigo-corpo .fonte-original a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .artigo-corpo .fonte-original a:hover { text-decoration: underline; }
+
+    .artigo-cta { background: var(--cream); padding: 80px 0; text-align: center; }
+    .artigo-cta h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--charcoal); margin-bottom: 16px; }
+    .artigo-cta p { color: #666; max-width: 500px; margin: 0 auto 32px; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="Abreu & Silva Sociedade de Advogados">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#sobre">O Escritório</a></li>
+      <li><a href="index.html#areas">Áreas de Atuação</a></li>
+      <li><a href="index.html#profissionais">Profissionais</a></li>
+      <li><a href="nossa-historia.html">Nossa História</a></li>
+      <li><a href="index.html#artigos">Artigos</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO DO ARTIGO -->
+<section class="artigo-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Início</a>
+      <span>›</span>
+      <a href="index.html#artigos">Artigos</a>
+      <span>›</span>
+      <span>Teoria da Perda de Uma Chance</span>
+    </div>
+    <span class="tag-categoria">Direito Civil · Responsabilidade Civil · Direito do Consumidor</span>
+    <h1>A Teoria da Perda de Uma Chance:<br><em>Responsabilidades Civil e de Consumo</em></h1>
+    <div class="artigo-meta">
+      <div class="autor">
+        <div class="autor-monograma">R</div>
+        <div class="autor-info">
+          <strong>Des. Roberto de Abreu e Silva</strong>
+          <span>OAB/RJ 5.349 · Desembargador TJRJ · Mestre e Doutor em Direito Civil</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <span class="data">16 de junho de 2014</span>
+      <div class="divider"></div>
+      <span class="publicado-em">Publicado na <a href="https://editorajc.com.br/edicao/166/" target="_blank" rel="noopener">Revista JC — Edição 166</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- CORPO DO ARTIGO -->
+<section class="artigo-corpo">
+  <div class="container">
+
+    <h2>1. Introdução Doutrinária</h2>
+
+    <p>No campo das teses ecléticas no direito brasileiro destaca-se a <strong>TEORIA DA PERDA DE CHANCE</strong> como instrumento indispensável à configuração da responsabilidade civil e da obrigação de indenizar e ou reparar, notadamente, na fixação do <em>quantum</em> reparatório, mitigado, à luz dos elementos valorativos dos artigos 944, p. único, e 945 do Código Civil/02. O conceito desta teoria delineia-se na doutrina do direito pátrio e comparado, nas expressões de juristas de escol como: Caio Mário da Silva Pereira, Silvia Mota, Atilio Anibal Alterini, Philippe le Tourneau, etc.</p>
+
+    <p>Caio Mário da Silva Pereira<sup>1</sup>, analisando a situação da teoria da perda de uma chance leciona que: <em>"…a chance perdida tenha algum valor, do qual a vítima se privou…"</em> Aponta, como exemplos, "o caso da pessoa que deixou de adquirir um imóvel por culpa do notário ou de ganhar um processo pela falha do escrivão ou do advogado". Ressalta o dizer de Yves Chartier "que a reparação da perda de uma chance repousa em uma probabilidade e uma certeza; que a chance seria realizada e que a vantagem perdida resultaria em prejuízo…"</p>
+
+    <p>A doutora Sílvia Mota<sup>2</sup> na doutrina da teoria da perda de uma chance em sua tese de doutoramento fundamenta que: <em>"A chance é a possibilidade de um benefício futuro provável integrada nas faculdades de atuação do sujeito, considerando um dano ainda quando possa resultar dificultoso estimar seu alcance… Aconselha-se efetuar um balanço das perspectivas a favor e contra e, do saldo resultante, se obterá a proporção do ressarcimento. A indenização deverá ser da chance e não dos ganhos perdidos…"</em> Atilio Anibal Alterini<sup>3</sup>, no direito argentino, sustenta a tese da perda de uma chance no sentido de que se não houvesse tutela preventiva de dano, tendente a impedir a realização de possíveis prejuízos, seria como criar um direito de prejudicar, assim, expressando:</p>
+
+    <div class="citacao-bloco">
+      <em>"3. La prevención del daño… 'cualquiera sea su fuente, deben ser evitados' (Mosset Iturraspe). Es que, si se permaneciera impasible frente a la ilicitude, inclusive, ante la aparición de un riesgo que compromete la chance de evitar un deterioro de la situación actual, 'ello importaría tanto como crear el derecho de perjudicar' (Aguiar)."</em>
+    </div>
+
+    <p>Philippe le Tourneau<sup>4</sup>, no direito francês, delimita o tema, pontuando a necessidade de se distinguir perda de uma chance de um risco, que pode surgir inesperadamente. Sustenta que a perda de uma chance constitui por vezes um prejuízo indenizável, enquanto que uma hipótese, uma pura hipótese, não seria causa de um dano, ou somente de uma eventualidade de dano não reparável. Define a perda de uma chance como <em>a desaparição da probabilidade de um evento favorável quando esta chance aparece suficientemente séria</em>. Aduz sobre a quantificação em valor correspondente ao da perda de uma chance, bem como sobre a situação de negligência de um advogado diminuindo ou suprimindo as chances de seu cliente de obter ganho de causa, etc.</p>
+
+    <h2>2. A Teoria da Perda de Uma Chance no Direito Brasileiro</h2>
+
+    <p>Destaca-se <em>"a b initio"</em> a necessária aplicação de solução justa da demanda atendendo aos princípios democráticos do direito: a) o respeito à dignidade da pessoa humana; e, b) proteção de seus bens tutelados na ordem jurídica. A rigor, a presente teoria se afigura inteligível em seus próprios termos.</p>
+
+    <p>Na chance perdida e reparável preexiste oportunidade séria de se conseguir um benefício futuro que se revela como interesse jurídico protegido pelo direito e frustrada por conduta ignóbil do agente ativo. A chance perdida consiste na privação de uma probabilidade, não hipotética, de obtenção de sucesso em pretensão séria, assegurada pelo direito, nas condições seguintes: (i) quando frustrada a vítima por conduta ignóbil do causador do dano à pessoa inocente; e (ii) resultando prejuízo provado ou evidente do fato danoso material e ou moral causado ao lesado. Em contrário senso, a pretensão improvável, hipotética, consiste em simples aventura, sem relevância jurídica. Por isso, não configura perda de chance indenizável nem deflagra a obrigação de reparar.</p>
+
+    <p>Em síntese, a chance perdida reparável configura um prejuízo material ou imaterial resultante de fato consumado, não hipotético, se causado à pessoa inocente (que não deu causa ao fato) por conduta comissiva ou omissiva do agente (falta de diligência ou prudência) quando viola interesse juridicamente protegido no direito positivo (<strong>CRFB/88, art. 5º, X, bem como nos Códigos Civil e do Consumidor – Lei 8.078/90</strong>). Tais elementos reclamam provas nos autos ou evidências do próprio fato e o indispensável nexo etiológico da causalidade necessária ligada à conduta censurável do agente que perpetrou prejuízo injusto causado à pessoa física ou jurídica resultante do fato consumado em conduta ilícita e geradora da perda de uma chance. A noção de causa envolve a ideia de necessariedade da ação determinante dos prejuízos injustos. A causa de um fato lesivo e antijurídico compreende-se como o antecedente ou grupo de antecedentes necessários à produção do prejuízo injusto, perda de uma chance ou da probabilidade séria de obter uma vantagem. A obrigação somente se verifica quando o prejuízo injusto perpetrado por falta infringente de norma jurídica é a causa necessária para a produção do prejuízo vinculada pelos nexos de causalidade e de antijuridicidade e do princípio jurídico tradicional: <em>"neminem laedere suum cuique tribuere"</em>.</p>
+
+    <p>Se a ação do agente é de conformidade com a lei, embora considerada causa no mundo fático, nem sempre o será no mundo jurídico, se faltar a antijuridicidade da conduta<sup>5</sup>, como ocorre, <em>v.g.</em>, na excludente da legítima defesa. No estudo da relação de causalidade é necessária a vinculação direta do prejuízo injusto causado pela perda de uma chance de se obter uma vantagem ou evitar uma perda originária de situação fática da qual depende o prejuízo já consumado. Na subsunção do fato à norma jurídica pelo julgador é indispensável considerar o valor do bem protegido e o desvalor da conduta, em sua tridimensionalidade: fato valor e norma, <em>cum arbitrio boni viri</em>, na concepção culturalista do direito de Miguel Reale<sup>6</sup>. Fundamental é que se relacione o dano ou prejuízo injusto à causa e efeito no mundo fático, articulada com a falta de diligência e de prudência na conduta violadora da norma jurídica no mundo do direito, para que se deflagre a consequência legal e constitucional de se impor a obrigação de reparar os prejuízos originários de suporte fático ilícito perpetrado à vítima inocente na perda de uma chance em ato consumado.</p>
+
+    <p>Em síntese, a chance perdida configura um dano injusto indenizável ou reparável quando há um prejuízo material e ou imaterial causado à pessoa inocente pela perda da probabilidade de um evento favorável certo, sério, não hipotético, em fato consumado perpetrado por conduta comissiva ou omissiva do agente (falta de diligência, prudência ou de perícia) causando a violação de interesse juridicamente protegido no direito positivo (CRFB/88, art. 5º, X, e ou normas do Código Civil ou do Código do Consumidor).</p>
+
+    <p>A par disso, impõe-se, ainda, a indispensável demonstração dos elementos gerais da responsabilidade civil assinalados a seguir: (i) nexo de causalidade entre a ação necessária e proporcional ao prejuízo proibido qualificado como perda de uma chance; (ii) a violação da norma jurídica constitucional e ou infra constitucional proibitiva da conduta lesiva; (iii) legitimação ativa e passiva, por fato próprio ou de outrem<sup>7</sup>; (iv) inexistência de causa de isenção ou de exclusão da reparação dos prejuízos em caso fortuito ou força maior, legítima defesa, falta exclusiva ou concorrente da vítima; e causa danosa de terceiro.</p>
+
+    <h2>3. A Visão Jurisprudencial da Teoria da Perda de Uma Chance</h2>
+
+    <p>Na experiência jurídica, a doutrina da perda de uma chance em sede de responsabilidade civil revela-se como instrumento importante de reparação de danos e ou de prejuízos injustos e geradores de sanções proporcionais aos prejuízos causados em relação causal direta com o dano e a gravidade da conduta censurável praticada pelo lesante, <em>ut</em> artigos 944, p. único, e 945 do atual Código Civil.</p>
+
+    <p>A teoria da perda de uma chance visa a responsabilização do agente causador, não exclusivo de um dano emergente, tampouco de lucros cessantes, mas de algo intermediário entre um e outro, precisamente, em conformidade com a perda da possibilidade de se buscar posição mais vantajosa que provavelmente se alcançaria, não fosse o ato ilícito praticado.</p>
+
+    <p>Neste passo, a perda de uma chance, desde que seja real, razoável, séria e não somente fluida ou hipotética é considerada uma lesão que reclama justas expectativas frustradas do indivíduo, que, na pretensão de conseguir uma conduta lícita de ordem social e jurídica mais vantajosa, teve o curso normal dos acontecimentos interrompido por ato ilícito de outrem.</p>
+
+    <p>Em caso de responsabilidade de profissionais da advocacia por condutas apontadas como negligentes e diante do aspecto relativo à incerteza da vantagem não experimentada, as demandas que invocam a teoria da "perda de uma chance" reclamam soluções a partir de uma detida análise acerca das reais possibilidades de êxito do processo, eventualmente perdidas em razão de desídia do causídico. Vale dizer, não é o só fato do causídico perder o prazo para a contestação ou para a interposição de recurso que enseja a automática responsabilização civil com base na teoria da perda de uma chance. É absolutamente necessária a ponderação acerca da probabilidade de sucesso que se supõe real que a parte sagrar-se-ia vitoriosa.</p>
+
+    <p>Na experiência do E. Superior Tribunal de Justiça destacam-se os votos dos relatores: Ministros FERNANDO GONÇALVES, Luís FELIPE SALOMÃO e NANCY ANDRIGHI<sup>8</sup>. No TJRJ, (i) em caso de responsabilidade civil/consumerista condenou-se a Clínica de Olhos em reparação de prejuízos causados à paciente que sofreu descolamento de retina, não pela cegueira em si, mas, pela perda de uma chance de salvar a sua visão. Em realidade, a falta cometida consistiu no descumprimento do dever jurídico de atuação médica no quadro de emergência, quando procurado no hospital na primeira vez causando-lhe prejuízo pela perda de uma chance, visto que não se lhe proporcionou intervenção médico-cirúrgica que permitisse a possibilidade de sucesso na perspectiva de salvaguardar a visão do paciente. Corolário lógico é a redução da sanção aplicada no primeiro grau a título de reparação de menor valor proporcional ao prejuízo consumado pela perda de uma chance e não pelo fato da perda da visão, porquanto a causa evidente consistiu em fator inteiramente estranho à atuação médica.<sup>9</sup></p>
+
+    <p>No mesmo sentido pontuou o E. TJRJ: (ii) 3ª Câmara Civil nos E.I. 2002.005.00446<sup>10</sup>. Impôs-se a responsabilidade civil/consumerista por vício de qualidade da prestação do serviço pela entidade hospitalar em caso de óbito de recém-nascido por apneia idiopática seguida de paradas cardiorrespiratórias causada pela demora no encaminhamento do paciente para unidade de terapia intensiva, aplicando na demanda a teoria da "perda de uma chance". Não porque se absteve em absoluto de atuar, ou por haver adotado medidas ineficazes e inócuas, que revelam imperícia, mas em razão do médico descumprir o dever de atuar. A sanção mitigou-se por não corresponder a reparação à indenização pelo dano morte, mas em razão do atuar tardio verificado na atuação médica e o dano sofrido, considerando <em>in casu</em> a perda de uma chance de sobrevivência. (iii) Demanda de responsabilidade civil por erro de diagnóstico prescrevendo relaxante muscular para caso de tuberculose vertebral gerando paraplegia, situação em que se aplicou a teoria da perda de uma chance impondo-se a obrigação de reparação por dano moral.<sup>11</sup> (iv) No E. TJRGS, Décima Câmara Cível, na Apelação Cível 70013036678, em demanda de responsabilidade civil por erro médico que resultou na morte de recém-nascido, considerou-se a evidência da imprudência praticada pela profissional que optou por aguardar o agravamento de uma situação, que já era grave, para realizar a cesariana, aplicando no caso, a teoria da perda de uma chance, por entender que se a cesariana fosse realizada logo, talvez, o nefasto evento morte não ocorresse.<sup>12</sup> (v) Na E. 5ª Câmara Civil impôs-se a responsabilidade civil ao nosocômio pela falha do atendimento hospitalar, considerando que paciente portador de pneumonia bilateral teve tratamento domiciliar ao invés de hospitalar, aplicando a teoria da perda de uma chance de tratamento hospitalar, que talvez o tivesse salvo.<sup>13</sup></p>
+
+    <p>Na doutrina, na relação da responsabilidade civil de profissional liberal afigura-se possível a aplicação da teoria da perda de uma chance, conforme José de Aguiar Dias<sup>14</sup>: <em>"A perda de prazo é a causa mais frequente da responsabilidade do advogado. Constitui erro grave, a respeito do qual não é possível escusa, uma vez que os prazos são de direito expresso e não se tolera que o advogado o ignore."</em></p>
+
+    <p>Na esfera doutrinária é importante salientar as lições anteriores já lançadas de Caio Mário da Silva Pereira e Philippe le Tourneau<sup>15</sup>. Na mesma perspectiva seguem os posicionamentos jurisprudenciais. I) No E. TJRJ: (i) Apelação Cível nº 2003.001.19138. Décima Quarta Câmara Cível. Condenação de profissional advogado pelo Tribunal impondo-lhe sanção por danos morais em razão de perda de prazo recursal, em situação que revela, <em>ipso facto</em>, prejuízo pela perda de uma chance da parte de rever a decisão monocrática em segundo grau de jurisdição. (ii) 10ª Câmara Cível. Apelação Cível. Processo nº 2003.001.29927. Implicou-se a responsabilidade civil subjetiva do advogado que deixou de cumprir obrigação a seu cargo violando por negligência norma do artigo 14, p. 4º da Lei 8.078/90.<sup>16</sup> Na demanda entre consorciado e administradora do consórcio o E. TJRJ no recurso — Apelação nº 2005.001.02659 aplicou a teoria da perda de uma chance de participar na assembleia que sairia vencedor o lanço entregue pelo autor à funcionária da respectiva administradora, que não a encaminhou a tempo, em decorrência da frustração da autora por retirar-lhe a paz interna e o próprio equilíbrio emocional, configurando-se a responsabilidade civil indenizatória.<sup>17</sup></p>
+
+    <h2>4. A Sanção e a Quantificação dos Prejuízos</h2>
+
+    <p>A conduta ofensiva à norma jurídica proibitiva de conduta danosa injusta deflagra a obrigação de indenizar ou reparar os danos ou prejuízos injustos perpetrados à pessoa inocente. A quantificação da sanção do agente causador dos danos e ou prejuízos, considerando as circunstâncias fáticas e jurídicas do caso devidamente proporcional à intensidade da falta de cuidado e do valor do prejuízo causado pela perda de uma chance, da oportunidade ou probabilidade de obtenção de vantagem ou sucesso em suporte fático consumado. O nexo de causalidade do suporte fático da perda de uma chance e o resultado do prejuízo indenizável, em princípio, que não se confunde com o do fato-espécie de dano ou prejuízo de maior expressão, eventualmente, existente em fato complexo, quando causado por nexo etiológico não imputável ao réu.</p>
+
+    <p>Em tais circunstâncias, o valor da indenização na perda de uma chance deve minorar o valor que se arbitraria em eventual dano ou prejuízo maior, porém, por nexo de causalidade não imputável ao demandado, como ocorre em cada um de casos similares assinalados a seguir. (i) A condenação de advogado pelo Tribunal impondo-lhe sanção por danos morais em razão de perda de prazo recursal, em situação que revela <em>ipso facto</em> prejuízo pela perda de uma chance da parte de rever a decisão monocrática a seu favor em segundo grau de jurisdição e não pelo valor da demanda perdida em primeira instância, cujo nexo de causalidade não foi perpetrado pelo patrono da parte interessada; (ii) A condenação de clínica especializada por perpetrar à autora perda de uma chance de salvar a sua visão comprometida pelo descolamento da retina, se evidenciada por falta de cuidado de médico profissional e disponível na ocasião da procura do primeiro atendimento, transferindo-se a consulta para a semana posterior, ultrapassando o período da situação emergencial. Isto porque a lesão da mácula na retina da vista da paciente já se tinha consolidado quando do atendimento médico marcado superveniente, situação que torna ineficaz a tardia autorização do agente ativo no procedimento cirúrgico, sem a mínima possibilidade de sucesso. Em síntese, a questão da perda de uma chance se afigura no pressuposto fático: omissão hospitalar e ou do médico se houve o prejuízo pela perda de uma chance de salvar a visão do paciente e não pelo prejuízo da cegueira, no caso concreto. O antecedente causal, conduta omissiva hospitalar, se liga ao consequente prejuízo pela perda de uma chance em fato já consumado, por não oferecer à autora o socorro tempestivo por meio de uma intervenção médico-cirúrgica que lhe proporcionasse a possibilidade de sucesso em salvaguardar a sua visão. A condenação da reparação neste caso limita-se ao valor do prejuízo causado pela perda de uma chance, probabilidade séria, não hipotética, de salvar a visão do paciente e não pelo mal maior do prejuízo pela perda da visão, visto que o nexo de causalidade referente ao descolamento da retina não é imputável à entidade hospitalar, no caso concreto.</p>
+
+    <h2>5. Conclusão</h2>
+
+    <p>No direito brasileiro, atualmente, predominam as teses da responsabilidade civil objetiva ou sem culpa provada, como denotam os seguimentos legislativos no direito público e privado expressos nos artigos 37, p. 6º, da CRFB/88 e 12 e 14 da Lei 8.078/90; bem como nas teorias subjetivas, que em determinados casos implicam-se a inversão do ônus da prova e em teses ecléticas, dentre as quais, a teoria da perda de uma chance.</p>
+
+    <p>Na análise do caso concreto, em sede de responsabilidade civil, afigura-se indispensável a identificação do nexo etiológico ligando a conduta censurável do agente como causa necessária à produção do resultado, dano injusto ou prejuízo perpetrado à pessoa inocente. A conduta censurável consiste na falta jurídica comissiva ou omissiva por violação do dever jurídico de diligência ou prudência. Considera-se como pessoa inocente a que não deu causa ao fato. O dano ou prejuízo é sempre injusto. Não existe dano "justo", mas justificável, segundo o direito positivo. O dano injusto ou prejuízo material ou moral causado à pessoa inocente não mais se compreende como perda ou diminuição de um patrimônio, mas, como violação de um interesse juridicamente protegido, em razão da proteção do bem imaterial ou moral, a partir da exigência constitucional de respeito à vida, à liberdade, dignidade da pessoa humana e da propriedade (art. 1º, III, 5º, <em>caput</em>, X e XXII, da CRFB/88).</p>
+
+    <p>A teoria da perda de uma chance revitalizou-se, atualmente, como instrumento indispensável à realização da Justiça por três razões básicas. <strong>Primeira</strong>, o estudo do caso permite a identificação do dano injusto ou prejuízo causado resultante da conduta censurável do agente em fato consumado pela perda de uma chance ou possibilidade de sucesso em pretensão séria e razoável garantido como interesse juridicamente protegido. O pressuposto fático da perda de uma chance configura na ordem jurídica do dano ou prejuízo injusto material e ou moral causado por falta de diligência e prudência do agente em fato já consumado de probabilidade certa, não hipotética. <strong>Segunda</strong>, à reparação do dano certo causado pela perda de uma chance arbitrar-se-á a indenização em valor correspondente ao efetivo prejuízo (<em>perte d'une chance</em>). Não se confunde com a indenização por dano ou prejuízo de maior expressão. <strong>Terceira</strong>, na aplicação da teoria da perda de uma chance impõe-se uma quantificação minorada da indenização ou reparação material ou moral (art. 944, p. único, do Código Civil) considerando-se: (i) a intensidade mínima da falta não intencional e ou sem culpa nas teorias objetivas (arts. 37 p. 6º, da CRFB/88 e/ou 12 e 14 da Lei 8.078/90, etc.), ou por culpa leve ou levíssima (negligência, imprudência ou imperícia) na teoria subjetiva; (ii) os danos e prejuízos materiais ou morais perpetrados pela perda de uma chance reclamam quantificação inferior a que se aplicaria na prática de mal maior perpetrado por dolo ou culpa (art. 186 do Código Civil/02); (iii) a quantificação dos danos ou prejuízos é proporcional à gravidade da falta jurídica e do prejuízo causado pelo fato consumado da perda de uma chance, se causado por fato não imputável ao demandado, compatibilizando-se o valor da reparação nas perspectivas dos princípios da proporcionalidade, razoabilidade, equidade e Justiça.</p>
+
+    <!-- NOTAS DE RODAPÉ COMPLETAS -->
+    <div class="notas">
+      <h3>Notas de Rodapé</h3>
+      <ol>
+        <li data-num="1">PEREIRA, Caio Mário da Silva. <em>Responsabilidade Civil</em>. Rio de Janeiro: Forense, 1999, p. 41/42.</li>
+        <li data-num="2">MOTA, Sílvia. <em>Responsabilidade civil decorrente das manipulações genéticas: novo paradigma jurídico ao fulgor do biodireito</em>. Tese (Doutorado em Justiça e Sociedade) — Universidade Gama Filho, Rio de Janeiro, 2005.</li>
+        <li data-num="3">ALTERINI, Atílio Aníbal e Cabana, Roberto Lopez. <em>Temas de Responsabilidad Civil</em>. Facultad de Derecho y Ciencias Sociales, Universidade de Buenos Aires, Ciudad Argentina, 1999, p. 206.</li>
+        <li data-num="4">TOURNEAU, Philippe. <em>Droit de la responsabilité</em>. nº 669/676, Paris: Dalloz, 1998, pp. 213/215.</li>
+        <li data-num="5">Exemplos: situação de falta exclusiva da vítima. Conduzir-se um veículo no limite da velocidade permitida para o local, com atenção, quando um pedestre, saindo detrás de outro automóvel, inopinadamente, tenta atravessar a pista, sem observar o tráfego, provocando seu próprio atropelamento.</li>
+        <li data-num="6">REALE, Miguel. <em>Teoria Tridimensional do Direito</em>. São Paulo: Saraiva, 1980.</li>
+        <li data-num="7">Exemplos: o pai responde pelos atos dos filhos menores sob a sua guarda; o patrão se obriga por ato danoso de seu empregado ou preposto — artigo 932, I e III, do Código Civil; na responsabilidade contratual do transportador que não leva incólume o passageiro a seu destino que sofreu o dano causado por fato de terceiro, "ut" Súmula 187 do STF; ou incidência da norma do artigo 37, § 6º, CRFB/88.</li>
+        <li data-num="8">(i) RECURSO ESPECIAL Nº 788.459 – DA (2005/0172410-9). Relator: MINISTRO FERNANDO GONÇALVES. Quarta Turma. Julgado em 08/11/2005. RECURSO ESPECIAL. INDENIZAÇÃO. IMPROPRIEDADE DE PERGUNTA FORMULADA EM PROGRAMA DE TELEVISÃO. PERDA DA OPORTUNIDADE. Recurso conhecido e, em parte, provido. (ii) REsp 1190180/RS — RECURSO ESPECIAL 2010/0068537-8. Ministro LUIS FELIPE SALOMÃO. QUARTA TURMA. Julgamento: 16/11/2010. Recurso especial conhecido e provido em parte, para o fim de reduzir a indenização fixada. (iii) RESPONSABILIDADE CIVIL. ADVOCACIA. PERDA DO PRAZO PARA CONTESTAR. INDENIZAÇÃO POR DANOS MATERIAIS FORMULADA PELO CLIENTE EM FACE DO PATRONO. PREJUÍZO MATERIAL PLENAMENTE INDIVIDUALIZADO NA INICIAL. APLICAÇÃO DA TEORIA DA PERDA DE UMA CHANCE. CONDENAÇÃO EM DANOS MORAIS. JULGAMENTO EXTRA PETITA RECONHECIDO. (iv) REsp 1254141/PR — MINISTRA NANCY ANDRIGHI. TERCEIRA TURMA. JULGAMENTO: 04/12/2012. DIREITO CIVIL. CÂNCER. TRATAMENTO INADEQUADO. REDUÇÃO DAS POSSIBILIDADES DE CURA. ÓBITO. IMPUTAÇÃO DE CULPA AO MÉDICO. POSSIBILIDADE DE APLICAÇÃO DA TEORIA DA RESPONSABILIDADE CIVIL PELA PERDA DE UMA CHANCE. REDUÇÃO PROPORCIONAL DA INDENIZAÇÃO. RECURSO ESPECIAL PARCIALMENTE PROVIDO.</li>
+        <li data-num="9">TJRJ. Apelação Cível nº 2006.001.08137 — NONA CÂMARA CÍVEL. RESPONSABILIDADE CIVIL/CONSUMERISTA. CLÍNICA DE OLHOS. DESCOLAMENTO DE RETINA. PERDA DA VISÃO. ATENDIMENTO TARDIO. PERDA DA CHANCE. REPARAÇÃO.</li>
+        <li data-num="10">TJRJ. (3ª Câmara Civil). Embargos Infringentes nº 2002.005.00446. Relator: Desembargador Werson Rego. Rio de Janeiro, 3 de junho de 2003. Recurso conhecido e provido.</li>
+        <li data-num="11">Ap. 2005.001.44557. 17ª C. Cível. DES. EDSON VASCONCELOS — Julgamento: 29/03/2006.</li>
+        <li data-num="12">TJRGS — 10ª Câmara Cível, Apelação 70013036678. Rel. Luiz Ary Vessini de Lima — Julgamento: 22/12/2005.</li>
+        <li data-num="13">TJRGS (5ª Câmara Civil). Responsabilidade civil. Falha do atendimento hospitalar. Paciente portador de pneumonia bilateral. Tratamento domiciliar ao invés de hospitalar. Perda de uma chance. 1. É responsável pelos danos, patrimoniais e morais, derivados da morte do paciente… (<em>perte d'une chance</em>) de tratamento hospitalar, que talvez o tivesse salvo. Apelação Cível nº 596070979. Relator: Desembargador Araken de Assis. Porto Alegre, 15 de agosto de 1996.</li>
+        <li data-num="14">DIAS, José de Aguiar. <em>Da Responsabilidade Civil</em>. vol. 1, 5ª edição. Rio: Forense, p. 330.</li>
+        <li data-num="15">TOURNEAU, Philippe. <em>Droit de la responsabilité</em>. nº 676, Paris: Dalloz, 1998, p. 215.</li>
+        <li data-num="16">TJRJ. (i) 14ª Câmara Cível. RESPONSABILIDADE CIVIL DE ADVOGADO. EXERCÍCIO CULPOSO DA PROFISSÃO. PRAZO PARA RECURSO. INOBSERVÂNCIA DO PRAZO. DANO MORAL. MANDATO. RESPONSABILIDADE CIVIL DO ADVOGADO. INDENIZAÇÃO POR DANOS CAUSADOS EM VIRTUDE DE PERDA DE PRAZO. DANOS MORAIS JULGADOS PROCEDENTES.</li>
+        <li data-num="17">TJRJ. Ap. 2005.001.02659. DES. MAURÍCIO CALDAS LOPES — Julgamento: 22/03/2005 — 2ª CC. Recurso não provido.</li>
+      </ol>
+    </div>
+
+    <div class="fonte-original">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AC9775" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Artigo originalmente publicado na <a href="https://editorajc.com.br/teoria-da-perda-de-uma-chance-responsabilidades-civil-e-de-consumo/" target="_blank" rel="noopener">Revista JC — Edição 166 (junho de 2014)</a>. Todos os direitos reservados ao autor e à publicação.
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="artigo-cta">
+  <div class="container">
+    <h3>Tem uma questão jurídica relacionada?</h3>
+    <p>Nossa equipe está preparada para orientá-lo sobre responsabilidade civil, direito do consumidor e contencioso empresarial.</p>
+    <a href="index.html#contato" class="btn btn-gold">Solicite uma Consulta</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <img src="assets/logo.png" alt="Abreu & Silva">
+      <p>Sociedade de Advogados</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="index.html#sobre">O Escritório</a></li>
+        <li><a href="index.html#areas">Áreas de Atuação</a></li>
+        <li><a href="index.html#profissionais">Profissionais</a></li>
+        <li><a href="nossa-historia.html">Nossa História</a></li>
+        <li><a href="index.html#artigos">Artigos</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-contato">
+      <h4>Contato</h4>
+      <p><a href="mailto:roberto@robertoabreu.adv.br">roberto@robertoabreu.adv.br</a></p>
+      <p>(24) 3212-2880</p>
+      <p>Volta Redonda — RJ</p>
+      <p>São Paulo — SP</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Abreu & Silva Sociedade de Advogados. Todos os direitos reservados. OAB/RJ.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
